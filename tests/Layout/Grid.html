@@ -19,29 +19,76 @@
       height: 200px;
       background-color: #80bdff;
     }
+    .col {
+      min-height: 50px;
+      border: 1px solid #aaaaaa;
+    }
+    .con-demo {
+      height: 300px;
+      width: 100%;
+      border: 1px solid #000;
+    }
   </style>
-  <title>Grid</title>
+  <title>Grid system</title>
 </head>
 <body>
 <div class="container">
-  <h1>Grid</h1>
+  <h1>Grid system</h1>
   <hr/>
-  <h2>Containers</h2>
-</div>
-<div class="container">
+  <p>单col为自适应，如果row中有定义宽度的col，则未定义的col平分剩余空间</p>
+  <p>可设置自适应的最低值，如限定col-md，则在md以下会把所有col拉伸到100%</p>
+  <p class="text-danger">因为栅格是12格，如果剩下自适应的平分不为整数，可能会出布局问题。如col，col-11，col</p>
+  <p class="text-danger">不支持col-xs-布局</p>
+  <p class="text-danger">移除visible-，hidden-</p>
   <div class="row">
-    <div class="col col-lg-2 box1"></div>
-    <div class="col col-lg-10 box2"></div>
+    <div class="col-sm box1"></div>
+    <div class="col-sm-6 box2"></div>
+    <div class="col-sm box1"></div>
   </div>
-</div>
-<div class="container">
-  <h2>container-fluid</h2>
-  <p>新增container-fluid全宽容器，不会受预设档位影响（width：100%）</p>
-</div>
-<div class="container-fluid">
+  <h2>Equal-width multi-row</h2>
+  <p>能通过.w-100来打断原来的布局，可以通过隐藏来取消</p>
   <div class="row">
-    <div class="col col-lg-2 box1"></div>
-    <div class="col col-lg-10 box2"></div>
+    <div class="col">col</div>
+    <div class="col">col</div>
+    <div class="w-100"></div>
+    <div class="col">col</div>
+    <div class="col">col</div>
+  </div>
+  <h2>Alignment</h2>
+  <div class="container con-demo">
+    <div class="row align-items-start">
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+    </div>
+    <div class="row align-items-end">
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+      <div class="col">
+        One of three columns
+      </div>
+    </div>
   </div>
 </div>
 
